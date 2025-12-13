@@ -23,3 +23,17 @@ loadData(2)
   .catch((err) => {
     console.log(err);
   });
+
+// 6.2 Write a function wait(ms) that returns a Promise which resolves after ms milliseconds.
+
+function wait(ms) {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve();
+    }, ms);
+  });
+}
+
+wait(1000).then(() => {
+  console.log("1 second passed");
+});
