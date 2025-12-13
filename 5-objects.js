@@ -61,3 +61,13 @@ function printEmail(obj) {
 }
 
 printEmail(users);
+
+/* 5.4 From the object
+{ name: "Marko", age: 30, city: "Zagreb" }
+extract name and city. */
+
+const person = { name: "Marko", age: 30, city: "Zagreb" };
+const { name, city } = person;
+
+console.log(name); // Marko
+console.log(city); // Zagreb
