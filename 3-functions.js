@@ -47,3 +47,9 @@ function multByTwo(a) {
 }
 
 console.log(processArray(numbers, multByTwo));
+
+console.log(
+  processArray(numbers, (a) => {
+    return a * 4;
+  })
+);
