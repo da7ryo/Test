@@ -1,3 +1,5 @@
+// Function to check if a number is positive, negative, or zero
+
 function checkNum(num) {
   if (num > 0) {
     console.log(" The number is positive");
@@ -9,6 +11,8 @@ function checkNum(num) {
 checkNum(0);
 checkNum(3);
 checkNum(-8);
+
+// Function to check if someone can drive based on their age
 
 function canDrive(age) {
   if (age >= 18) {
