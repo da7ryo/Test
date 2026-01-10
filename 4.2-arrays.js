@@ -14,20 +14,20 @@ myArr.sort((a, b) => b - a);
 console.log(myArr);
 
 let words = [
-  "JavaScript",
-  "programiranje",
-  "računalo",
-  "internet",
-  "funkcija",
-  "petlja",
-  "array",
-  "string",
+  'JavaScript',
+  'programiranje',
+  'računalo',
+  'internet',
+  'funkcija',
+  'petlja',
+  'array',
+  'string',
 ];
 
 // Function to find the longest word in an array of strings
 
 function findLongestWord(arr) {
-  let longest = ""; // Initialize a variable to store the longest word, start with an empty string
+  let longest = ''; // Initialize a variable to store the longest word, start with an empty string
 
   // Loop through each word in the array
   for (let word of arr) {
