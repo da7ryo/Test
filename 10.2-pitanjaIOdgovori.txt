@@ -1,0 +1,42 @@
+1. Zašto je bolje vratiti novi niz iz processCourses, nego mijenjati postojeći?
+Bolje je vratiti novi niz jer izbjegavamo mutiranje originalnih podataka, što čini kod sigurnijim i lakšim za održavanje.
+
+2. Što bi se dogodilo da processCourses direktno mijenja objekte iz courses?
+Da funkcija processCourses direktno mijenja objekte iz course izgubili bi prvobitnu vrijednost svojstva isActive, 
+a svojstvo duration bi bilo potpuno uklonjeno.
+
+isActive bi bio izgubljen jer ga zamjenjuješ s status
+duration bi nestao jer ga više ne kopiraš
+originalni podaci postaju neupotrebljivi za druge dijelove aplikacije
+
+3. Zašto je Array.isArray() bolji od typeof courses === 'object'?
+
+typeof ne može vratiti 'array'
+funkcije su 'function', ali:
+nizovi, objekti i instance su 'object'
+
+Zato je Array.isArray() jedini pouzdan način
+
+4.4️⃣ Tehnički (intervju nivo)
+
+„Kako JavaScript određuje vrijednost this prilikom poziva funkcije 
+i zašto se ona gubi kada se metoda klase koristi kao callback u setTimeout?“
+
+Pravilo za pamćenje 🧠
+Ako proslijediš metodu kao callback, gubi this
+this u JavaScriptu se određuje u trenutku poziva funkcije, ne u trenutku definicije.
+Kada metodu klase proslijedimo kao callback (setTimeout), 
+ona se poziva kao obična funkcija, pa gubi referencu na instancu. Problem se rješava pomoću bind ili arrow funkcije.
+Zato:
+bind() - setTimeout(bot.speak.bind(bot), 1000);
+arrow wrapper - setTimeout(() => bot.speak(), 1000);
+arrow metoda u klasi - 
+class Bot {
+  greeting = "Hi Mateo";
+
+  speak = () => {
+    console.log(this.greeting);
+  }
+}
+
+Ovdje this nikad ne gubi kontekst, čak ni u setTimeout.

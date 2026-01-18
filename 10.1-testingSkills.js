@@ -27,5 +27,31 @@ function getCourseStats(course) {
     totalStudents: course.reduce((acc, item) => acc + item.students, 0),
   };
 }
+function safeGetPopularCourses(courses, minStudents) {
+  if (!Array.isArray(courses) || typeof minStudents !== 'number') {
+    return [];
+  }
 
-console.log(getCourseStats(courses));
+  return courses.filter((item) => item.isActive && item.students > minStudents);
+}
+
+function deactivateLongCourses(courses, minDuration) {
+  return courses.map((item) => {
+    if (item.duration > minDuration) {
+      return {
+        ...item,
+        isActive: false,
+      };
+    }
+    return {
+      ...item,
+    };
+  });
+}
+
+function countInactiveCourses(courses) {
+  if (!Array.isArray(courses)) {
+    return 0;
+  }
+  return courses.filter((item) => item.isActive !== true).length;
+}
