@@ -17,7 +17,7 @@ nizovi, objekti i instance su 'object'
 
 Zato je Array.isArray() jedini pouzdan način
 
-4.4️⃣ Tehnički (intervju nivo)
+4. Tehnički (intervju nivo)
 
 „Kako JavaScript određuje vrijednost this prilikom poziva funkcije 
 i zašto se ona gubi kada se metoda klase koristi kao callback u setTimeout?“
@@ -40,3 +40,10 @@ class Bot {
 }
 
 Ovdje this nikad ne gubi kontekst, čak ni u setTimeout.
+
+5. Microtask queue (Promise, await) se izvršava prije macrotask queue-a (setTimeout, setInterval), 
+odmah nakon što se call stack isprazni.
+
+6. Zašto await u for petlji nije paralelan, a Promise.all jest?
+Zato što await čeka da se Promise završi prije sljedeće iteracije,
+dok Promise.all pokreće sve Promise odjednom i čeka ih zajedno.
