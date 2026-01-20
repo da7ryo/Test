@@ -47,3 +47,23 @@ odmah nakon što se call stack isprazni.
 6. Zašto await u for petlji nije paralelan, a Promise.all jest?
 Zato što await čeka da se Promise završi prije sljedeće iteracije,
 dok Promise.all pokreće sve Promise odjednom i čeka ih zajedno.
+
+7. Kada bi koristio factory function umjesto class?
+Factory function bih koristio kada želim izbjegnuti this, new i probleme s bindingom, 
+te imati veću fleksibilnost bez klasa.
+
+8. Je li constructor funkcija isto što i factory?
+NE.
+
+Constructor funkcija:
+koristi this
+zahtijeva new
+radi s prototype-om
+
+Factory funkcija:
+vraća objekt
+ne koristi this
+ne koristi new
+
+Factory funkcije koristim kada želim jednostavne objekte bez this i new, 
+dok class koristim kada mi treba struktura, nasljeđivanje i dijeljene metode preko prototype-a.
