@@ -143,3 +143,7 @@ function delay(ms) {
     setTimeout(() => resolve('Done'), ms);
   });
 }
+
+delay(2000)
+  .then((val) => console.log(val))
+  .catch((err) => console.log(err));
